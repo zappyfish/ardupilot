@@ -22,3 +22,6 @@
 [submodule "modules/ChibiOS"]
 	path = modules/ChibiOS
 	url = git://github.com/ArduPilot/ChibiOS.git
+[submodule "libraries/Jetson-Processing/Jetson-Processing"]
+	path = libraries/Jetson-Processing/Jetson-Processing
+	url = https://github.com/zappyfish/Jetson-Processing.git

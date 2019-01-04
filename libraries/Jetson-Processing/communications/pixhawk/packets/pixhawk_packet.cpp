@@ -13,7 +13,7 @@ std::vector<char> pixhawk_packet::serialize() {
         char next = get_packet_type()[i];
         serialized.push_back(next);
     }
-    
+
     serialized.push_back(PACKET_START);
     size_t fields_cnt = 0;
     while (fields_cnt < m_keys.size()) {
