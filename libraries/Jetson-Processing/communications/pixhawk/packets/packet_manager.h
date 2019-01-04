@@ -36,7 +36,10 @@ public:
 
 private:
 
-    typedef std::queue<pixhawk::packet_ptr> packet_queue;
+    typedef struct {
+        std::queue<pixhawk::packet_ptr> packets;
+        const char * name;
+    } packet_queue;
 
     packet_manager();
 
@@ -46,7 +49,9 @@ private:
     uart *m_uart;
 
     // This maps packet type to a queue of those packets
-    std::map<const char *, packet_queue*> m_packet_queues;
+    std::vector<packet_queue*> m_packet_queues;
+
+    packet_queue *find_packet_queue(const char * name);
 
 };
 

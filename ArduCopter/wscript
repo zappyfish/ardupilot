@@ -32,6 +32,8 @@ def build(bld):
             'AP_Follow',
             'AP_Devo_Telem',
             'AP_OSD',
+            'Jetson-Processing/communications/pixhawk/packets/',
+            'Jetson-Processing/communications/pixhawk/uart/',
         ],
     )
 

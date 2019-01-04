@@ -4,7 +4,8 @@
 
 #include "flight_packet.h"
 #include <string>
-#include <stdio.h>
+#include <cstdio>
+#include <cstring>
 
 const size_t flight_packet::NUM_KEYS = 6;
 const size_t flight_packet::PRECISION = 10;
@@ -15,7 +16,7 @@ const char* flight_packet::KEYS[] = {"x", "y", "z", "roll", "pitch", "yaw"};
 flight_packet::flight_packet(std::vector<const char*> keys, std::vector<const char*> values) {
     for (size_t i = 0; i < NUM_KEYS; i++) {
         m_keys.push_back(KEYS[i]);
-        char * value = new char[strlen(values[i]) + 1];
+        char * value = new char[std::strlen(values[i]) + 1];
         std::strcpy(value, values[i]);
         m_values.push_back(value);
     }
@@ -76,6 +77,6 @@ const char* flight_packet::get_packet_type() {
 
 const char* flight_packet::to_string(double &value, char *buffer) {
     // Use precision here
-    std::snprintf(buffer, sizeof(buffer), "%10f", value);
+    std::snprintf(buffer, PRECISION + 1, "%10f", value);
     return buffer;
 }

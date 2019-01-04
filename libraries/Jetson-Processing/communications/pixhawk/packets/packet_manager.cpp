@@ -5,6 +5,8 @@
 #include "packet_manager.h"
 #include "flight_packet.h"
 #include "directions_packet.h"
+#include <cstring>
+#include <string.h>
 #include "test_packet.h"
 #if defined(__linux__)|| defined(_WIN32) || defined(__APPLE__)
 #include "data_logger.h"
@@ -17,9 +19,17 @@ packet_manager& packet_manager::get_instance() {
 
 packet_manager::packet_manager() : m_uart(nullptr) {
     // TODO: Add a line here for each packet type
-    m_packet_queues[directions_packet::PACKET_NAME] = new packet_queue();
-    m_packet_queues[test_packet::PACKET_NAME] = new packet_queue();
-    m_packet_queues[flight_packet::PACKET_NAME] = new packet_queue();
+    packet_queue *directions= new packet_queue();
+    directions->name = directions_packet::PACKET_NAME;
+    m_packet_queues.push_back(directions);
+
+    packet_queue *test = new packet_queue();
+    test->name = test_packet::PACKET_NAME;
+    m_packet_queues.push_back(test);
+
+    packet_queue *flight= new packet_queue();
+    flight->name = flight_packet::PACKET_NAME;
+    m_packet_queues.push_back(flight);
 }
 
 packet_manager::~packet_manager() {
@@ -27,8 +37,8 @@ packet_manager::~packet_manager() {
         delete m_uart;
         m_uart = nullptr;
     }
-    for (auto const &pair: m_packet_queues) {
-        delete pair.second; // The packet queue itself
+    for (size_t i = 0; i < m_packet_queues.size(); i++) {
+        delete m_packet_queues[i];
     }
 }
 
@@ -52,21 +62,26 @@ int packet_manager::check_packets(const char* packet_type) {
         start_ind = parse_for_packet_data(buffer_data, start_ind);
     }
 
-    if (m_packet_queues.find(packet_type) == m_packet_queues.end()) {
+    packet_queue *p_queue = find_packet_queue(packet_type);
+
+    if (p_queue != nullptr) {
+        return p_queue->packets.size();
+    } else {
         return -1;
     }
-
-    return m_packet_queues[packet_type]->size();
 }
+
+
 
 /**
  * This is kinda dangerous b/c it returns nullptr, so just be careful when you call it; be sure to check the result!
  * @return
  */
 pixhawk::packet_ptr packet_manager::get_packet(const char* packet_type) {
-    if (!m_packet_queues[packet_type]->empty()) {
-        pixhawk::packet_ptr packet = m_packet_queues[packet_type]->front();
-        m_packet_queues[packet_type]->pop();
+    packet_queue *p_queue = find_packet_queue(packet_type);
+    if (p_queue != nullptr && !p_queue->packets.empty()) {
+        pixhawk::packet_ptr packet = p_queue->packets.front();
+        p_queue->packets.pop();
         return packet;
     } else {
         return nullptr;
@@ -115,7 +130,10 @@ size_t packet_manager::parse_for_packet_data(const std::vector<char> &buffer_dat
                         name[packet_name.size()] = '\0';
                         pixhawk::packet_ptr packet = create_packet(name, keys, values);
                         if (packet != nullptr) {
-                            m_packet_queues[packet->get_packet_type()]->push(packet);
+                            packet_queue *p_queue =find_packet_queue(packet->get_packet_type());
+                            if (p_queue != nullptr) {
+                                p_queue->packets.push(packet);
+                            }
                         }
                         delete[] name;
                     }
@@ -190,4 +208,17 @@ pixhawk::packet_ptr packet_manager::create_packet(const char* packet_type, std::
 
 void packet_manager::set_uart(uart *uart_bus) {
     m_uart = uart_bus;
+}
+
+packet_manager::packet_queue* packet_manager::find_packet_queue(const char *name) {
+    packet_queue *p_queue = nullptr;
+
+    for (size_t search = 0; search < m_packet_queues.size(); search++) {
+        if (std::strcmp(m_packet_queues.at(search)->name, name) == 0) {
+            p_queue = m_packet_queues.at(search);
+            break;
+        }
+    }
+
+    return p_queue;
 }

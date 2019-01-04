@@ -6,7 +6,6 @@
 #define NVIDIA_PIXHAWK_PACKET_H
 
 #include <vector>
-#include <map>
 #include <memory>
 
 /**

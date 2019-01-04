@@ -76,6 +76,9 @@ class Board:
             '-fdata-sections',
             '-fsigned-char',
 
+            '-D_GLIBCXX_USE_CXX11_ABI=0',
+
+            '-lstdc++',
             '-Wall',
             '-Wextra',
             '-Wformat',
@@ -138,11 +141,12 @@ class Board:
 
         env.CXXFLAGS += [
             '-std=gnu++11',
-
             '-fdata-sections',
             '-ffunction-sections',
             '-fno-exceptions',
             '-fsigned-char',
+
+            '-lstdc++',
 
             '-Wall',
             '-Wextra',

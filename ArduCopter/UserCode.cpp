@@ -1,10 +1,15 @@
 #include "Copter.h"
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h"
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/flight_packet.h"
+#include "../libraries/Jetson-Processing/communications/pixhawk/uart/pixhawk_uart.h"
 
 #ifdef USERHOOK_INIT
 void Copter::userhook_init()
 {
     // put your initialisation code here
     // this will be called once at start-up
+    pixhawk_uart *uart = new pixhawk_uart();
+    packet_manager::get_instance().set_uart(uart);
 }
 #endif
 
@@ -19,6 +24,12 @@ void Copter::userhook_FastLoop()
 void Copter::userhook_50Hz()
 {
     // put your 50Hz code here
+    Vector3f pos = inertial_nav.get_position();
+    double roll = attitude_control->get_angle_roll_p().kP();
+    double pitch = attitude_control->get_angle_pitch_p().kP();
+    double yaw = attitude_control->get_angle_yaw_p().kP();
+    flight_packet *packet = new flight_packet(pos.x, pos.y, pos.z, roll, pitch, yaw);
+    packet_manager::get_instance().send_packet(packet);
 }
 #endif
 

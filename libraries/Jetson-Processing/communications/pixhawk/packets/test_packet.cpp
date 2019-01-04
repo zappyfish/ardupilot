@@ -3,15 +3,15 @@
 //
 
 #include "test_packet.h"
-#include <iostream>
+#include <cstring>
 
 const char * test_packet::PACKET_NAME = "test";
 
 test_packet::test_packet(std::vector<const char*> keys, std::vector<const char*> values) {
     for (size_t i = 0; i < keys.size(); i++) {
-        char *key = new char[strlen(keys[i]) + 1];
+        char *key = new char[std::strlen(keys[i]) + 1];
         std::strcpy(key, keys[i]);
-        char *val = new char[strlen(values[i]) + 1];
+        char *val = new char[std::strlen(values[i]) + 1];
         std::strcpy(val, values[i]);
         m_keys.push_back(key);
         m_values.push_back(val);
