@@ -66,3 +66,5 @@ LIBRARIES += AP_WheelEncoder
 LIBRARIES += AP_Follow
 LIBRARIES += AP_Devo_Telem
 LIBRARIES += AP_OSD
+LIBRARIES += Jetson-Processing/communications/pixhawk/packets
+LIBRARIES += Jetson-Processing/communications/pixhawk/uart
