@@ -24,6 +24,7 @@
 #include <cmath>
 #include <stdio.h>
 #include <stdarg.h>
+#include <atomic>
 
 #include <AP_HAL/AP_HAL.h>
 
@@ -83,6 +84,9 @@
 #include <AP_Arming/AP_Arming.h>
 #include <AP_SmartRTL/AP_SmartRTL.h>
 #include <AP_TempCalibration/AP_TempCalibration.h>
+
+// VADL Dependencies
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h"
 
 // Configuration
 #include "defines.h"
@@ -182,6 +186,12 @@
 
 class Copter : public AP_HAL::HAL::Callbacks {
 public:
+
+    // Some VADL variables
+    std::atomic<bool> shouldSendArmingPacket;
+    std::atomic<bool> shouldSendDisarmingPacket;
+    packet_manager::packet_callback acknowledge_callback;
+
     friend class GCS_MAVLINK_Copter;
     friend class GCS_Copter;
     friend class AP_Rally_Copter;

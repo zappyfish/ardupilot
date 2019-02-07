@@ -966,11 +966,14 @@ void GCS_MAVLINK_Copter::handleMessage(mavlink_message_t* msg)
                 if (copter.init_arm_motors(true, do_arming_checks)) {
                     result = MAV_RESULT_ACCEPTED;
                     // TODO: send take-off packet here
+                    // rawr xD
+                    copter.shouldSendArmingPacket = true;
                 }
             } else if (is_zero(packet.param1))  {
                 if (copter.ap.land_complete || is_equal(packet.param2,magic_force_disarm_value)) {
                     // force disarming by setting param2 = 21196 is deprecated
                     copter.init_disarm_motors();
+                    copter.shouldSendDisarmingPacket = true;
                     result = MAV_RESULT_ACCEPTED;
                 } else {
                     result = MAV_RESULT_FAILED;

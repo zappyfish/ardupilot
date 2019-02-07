@@ -10,20 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bdd41f6-e2fb-463a-b12e-8823b7a965fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ardupilot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArduCopter/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ArduCopter/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArduCopter/APM_Config.h" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/APM_Config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArduCopter/Copter.h" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/Copter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArduCopter/GCS_Mavlink.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/GCS_Mavlink.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArduCopter/UserCode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/UserCode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/make.inc" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/make.inc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/wscript" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/wscript" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/pixhawk_packet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/pixhawk_packet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/Jetson-Processing/images/capture/raspicamera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/Jetson-Processing/images/capture/raspicamera.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArduCopter/UserVariables.h" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/UserVariables.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,16 +32,17 @@
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.131" value="1" />
           <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Makefile" value="10" />
           <entry key="Vagrantfile" value="1" />
-          <entry key="cpp" value="89" />
-          <entry key="h" value="95" />
+          <entry key="cpp" value="91" />
+          <entry key="h" value="96" />
           <entry key="inc" value="6" />
           <entry key="launch" value="1" />
           <entry key="md" value="1" />
@@ -63,7 +56,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="184" />
+          <entry key="ObjectiveC" value="187" />
           <entry key="PLAIN_TEXT" value="68" />
           <entry key="Python" value="27" />
         </counts>
@@ -71,8 +64,8 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="454" />
-          <entry key="cpp" value="9668" />
-          <entry key="h" value="2200" />
+          <entry key="cpp" value="10622" />
+          <entry key="h" value="2514" />
           <entry key="inc" value="182" />
           <entry key="mk" value="339" />
           <entry key="py" value="228" />
@@ -84,7 +77,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Doxygen file" value="1" />
-          <entry key="ObjectiveC" value="11867" />
+          <entry key="ObjectiveC" value="13135" />
           <entry key="PLAIN_TEXT" value="1034" />
           <entry key="Python" value="700" />
         </counts>
@@ -96,11 +89,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArduCopter/UserCode.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="-145">
+              <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#1493#1562#0" expanded="true" />
+                <element signature="e#1596#1664#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="658">
+              <caret line="190" column="52" selection-start-line="190" selection-start-column="52" selection-end-line="190" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -114,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArduCopter/Copter.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="876">
-              <caret line="834" column="17" selection-start-line="834" selection-start-column="17" selection-end-line="834" selection-end-column="17" />
+            <state relative-caret-position="187">
+              <caret line="192" column="57" selection-start-line="192" selection-start-column="57" selection-end-line="192" selection-end-column="57" />
               <folding>
                 <element signature="e#10135#10163#0" expanded="true" />
               </folding>
@@ -129,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArduCopter/GCS_Mavlink.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14505">
-              <caret line="967" column="54" selection-start-line="967" selection-start-column="54" selection-end-line="967" selection-end-column="54" />
+            <state relative-caret-position="367">
+              <caret line="974" column="37" selection-start-line="974" selection-start-column="37" selection-end-line="974" selection-end-column="37" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -141,29 +154,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArduCopter/UserVariables.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="195">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#139#354#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ArduCopter/AP_Arming.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ArduCopter/Copter.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -178,22 +173,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ArduCopter/APM_Config.h">
+        <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/images/capture/raspicamera.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="300">
+              <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ArduCopter/ArduCopter.cpp">
+        <entry file="file://$PROJECT_DIR$/ArduCopter/APM_Config.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4215">
-              <caret line="281" column="21" selection-start-line="281" selection-start-column="18" selection-end-line="281" selection-end-column="21" />
-              <folding>
-                <element signature="e#8091#8137#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="818">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
             </state>
           </provider>
         </entry>
@@ -202,11 +194,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>string</find>
-      <find>packet_type</find>
-      <find>delete</find>
-      <find>gcc</find>
-      <find>g++</find>
       <find>-lstdc++</find>
       <find>cout</find>
       <find>dataflash_class</find>
@@ -232,10 +219,15 @@
       <find>arm</find>
       <find>arming</find>
       <find>init_arm_motors</find>
+      <find>disarm</find>
+      <find>should</find>
+      <find>shouldsend</find>
+      <find>.at</find>
+      <find>at</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/libraries/Jetson-Processing" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -270,17 +262,18 @@
         <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/uart/pixhawk_uart.cpp" />
         <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/flight_packet.h" />
         <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/flight_packet.cpp" />
-        <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp" />
         <option value="$PROJECT_DIR$/libraries/DataFlash/DataFlash.h" />
         <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/pixhawk_packet.h" />
         <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/pixhawk_packet.cpp" />
         <option value="$PROJECT_DIR$/libraries/Jetson-Processing/images/capture/raspicamera.cpp" />
         <option value="$PROJECT_DIR$/libraries/Jetson-Processing/images/image.cpp" />
         <option value="$PROJECT_DIR$/ArduCopter/ArduCopter.cpp" />
-        <option value="$PROJECT_DIR$/ArduCopter/Copter.h" />
+        <option value="$PROJECT_DIR$/ArduCopter/UserVariables.h" />
+        <option value="$PROJECT_DIR$/ArduCopter/GCS_Mavlink.cpp" />
         <option value="$PROJECT_DIR$/ArduCopter/APM_Config.h" />
         <option value="$PROJECT_DIR$/ArduCopter/UserCode.cpp" />
-        <option value="$PROJECT_DIR$/ArduCopter/GCS_Mavlink.cpp" />
+        <option value="$PROJECT_DIR$/ArduCopter/Copter.h" />
+        <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp" />
       </list>
     </option>
   </component>
@@ -306,6 +299,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,11 +312,60 @@
               <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
               <item name="ArduCopter" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="communications" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="communications" type="462c0819:PsiDirectoryNode" />
+              <item name="pixhawk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="communications" type="462c0819:PsiDirectoryNode" />
+              <item name="pixhawk" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="capture" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -368,16 +411,18 @@
       <workItem from="1548289349809" duration="6089000" />
       <workItem from="1548959825917" duration="2070000" />
       <workItem from="1549117948316" duration="226000" />
+      <workItem from="1549416522295" duration="4341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68582000" />
+    <option name="totallyTimeSpent" value="72923000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15934066" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16117217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -435,13 +480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="38" column="61" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -506,13 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1170">
           <caret line="78" column="1" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -589,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/images/capture/raspicamera.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/images/image.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -634,43 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/UserCode.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AP_Arming/AP_Arming.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/GCS_Mavlink.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14505">
-          <caret line="967" column="54" selection-start-line="967" selection-start-column="54" selection-end-line="967" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/UserVariables.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="e#139#354#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ArduCopter/AP_Arming.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -685,20 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/pixhawk_packet.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/APM_Config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ArduCopter/ArduCopter.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4215">
@@ -709,13 +682,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/UserVariables.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#139#354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/GCS_Mavlink.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="974" column="37" selection-start-line="974" selection-start-column="37" selection-end-line="974" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/pixhawk_packet.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/images/capture/raspicamera.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/APM_Config.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="818">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AP_Arming/AP_Arming.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ArduCopter/Copter.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="834" column="17" selection-start-line="834" selection-start-column="17" selection-end-line="834" selection-end-column="17" />
+        <state relative-caret-position="187">
+          <caret line="192" column="57" selection-start-line="192" selection-start-column="57" selection-end-line="192" selection-end-column="57" />
           <folding>
             <element signature="e#10135#10163#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/UserCode.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-145">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#1493#1562#0" expanded="true" />
+            <element signature="e#1596#1664#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="190" column="52" selection-start-line="190" selection-start-column="52" selection-end-line="190" selection-end-column="52" />
         </state>
       </provider>
     </entry>

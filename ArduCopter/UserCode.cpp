@@ -2,6 +2,10 @@
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/flight_packet.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/uart/pixhawk_uart.h"
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/ack_packet.h"
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/arming_packet.h"
+
+void vadl_arming_callback(const char *packet_type, std::vector<const char *> keys, std::vector<const char *> values, void *args);
 
 #ifdef USERHOOK_INIT
 void Copter::userhook_init()
@@ -10,6 +14,12 @@ void Copter::userhook_init()
     // this will be called once at start-up
     pixhawk_uart *uart = new pixhawk_uart();
     packet_manager::get_instance().set_uart(uart);
+
+    acknowledge_callback.name = ack_packet::PACKET_NAME;
+    acknowledge_callback.callback = &vadl_arming_callback;
+    acknowledge_callback.args = this;
+
+    packet_manager::get_instance().set_packet_callback(&acknowledge_callback);
 }
 #endif
 
@@ -55,9 +65,18 @@ void Copter::userhook_SlowLoop()
 #endif
 
 #ifdef USERHOOK_SUPERSLOWLOOP
+
 void Copter::userhook_SuperSlowLoop()
 {
     // put your 1Hz code here
+    if (shouldSendArmingPacket.load()) {
+        arming_packet* jetson_arming_packet = new arming_packet(true);
+        packet_manager::get_instance().send_packet(jetson_arming_packet);
+    } else if (shouldSendDisarmingPacket.load()) {
+        arming_packet* jetson_disarming_packet = new arming_packet(false);
+        packet_manager::get_instance().send_packet(jetson_disarming_packet);
+    }
+
 }
 #endif
 
@@ -77,3 +96,11 @@ void Copter::userhook_auxSwitch3(uint8_t ch_flag)
     // put your aux switch #3 handler here (CHx_OPT = 49)
 }
 #endif
+
+void vadl_arming_callback(const char *packet_type, std::vector<const char *> keys, std::vector<const char *> values, void *args) {
+    if (copter.shouldSendArmingPacket.load()) { // Not sure if this is right
+        copter.shouldSendArmingPacket = false;
+    } else if (copter.shouldSendDisarmingPacket.load()) {
+        copter.shouldSendDisarmingPacket = false;
+    }
+}
