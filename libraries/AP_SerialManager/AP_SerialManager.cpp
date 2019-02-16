@@ -180,7 +180,8 @@ void AP_SerialManager::init()
 {
     // initialise pointers to serial ports
     state[1].uart = hal.uartC;  // serial1, uartC, normally telem1
-    state[2].uart = hal.uartD;  // serial2, uartD, normally telem2
+    //state[2].uart = hal.uartD;  // serial2, uartD, normally telem2
+    state[2].uart = nullptr;
     state[3].uart = hal.uartB;  // serial3, uartB, normally 1st GPS
     state[4].uart = hal.uartE;  // serial4, uartE, normally 2nd GPS
     state[5].uart = hal.uartF;  // serial5

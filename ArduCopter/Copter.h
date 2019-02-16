@@ -953,6 +953,10 @@ private:
     void userhook_auxSwitch2(uint8_t ch_flag);
     void userhook_auxSwitch3(uint8_t ch_flag);
 
+    // VADL
+    static void vadl_arming_callback(const char *packet_type, std::vector<const char *> keys, std::vector<const char *> values, void *args);
+
+
 #include "mode.h"
 
     Mode *flightmode;
@@ -969,6 +973,9 @@ private:
 #endif
 #if AUTOTUNE_ENABLED == ENABLED
     ModeAutoTune mode_autotune;
+#endif
+#if MODE_TARGET_AUTO_ENABLED == ENABLED
+    ModeTargetAuto mode_target_auto;
 #endif
 #if MODE_BRAKE_ENABLED == ENABLED
     ModeBrake mode_brake;

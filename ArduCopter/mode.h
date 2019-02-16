@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h"
+
 // this class is #included into the Copter:: namespace
 
 class Mode {
@@ -1239,4 +1241,42 @@ protected:
     int32_t wp_bearing() const override;
 
     uint32_t last_log_ms;   // system time of last time desired velocity was logging
+};
+
+class ModeTargetAuto: public ModeAuto {
+
+public:
+
+    using Copter::ModeAuto::Mode;
+
+    bool init(bool ingore_checks) override;
+    void run() override;
+    bool requires_GPS() const override { return false; }
+
+    void set_target(float x, float y);
+    void search_for_target();
+
+    void de_init();
+
+private:
+
+    float target_x;
+    float target_y;
+
+    void set_lean_angles(float &target_roll, float &target_pitch);
+
+    bool saw_target;
+    bool should_land;
+
+    void move_to_target();
+    void land();
+
+    packet_manager::packet_callback target_location_callback;
+
+    static void target_packet_callback(const char *packet_type, std::vector<const char *> keys, std::vector<const char *> values, void *args);
+
+protected:
+
+    const char *name() const override { return "VADL AUTO TARGET"; }
+    const char *name4() const override { return "TARG"; }
 };

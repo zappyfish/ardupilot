@@ -278,6 +278,12 @@
 #endif
 
 //////////////////////////////////////////////////////////////////////////////
+// VADL Auto Target mode - allows vehicle to search and move to target
+#ifndef MODE_TARGET_AUTO_ENABLED
+# define MODE_TARGET_AUTO_ENABLED ENABLED
+#endif
+
+//////////////////////////////////////////////////////////////////////////////
 // Brake mode - bring vehicle to stop
 #ifndef MODE_BRAKE_ENABLED
 # define MODE_BRAKE_ENABLED ENABLED

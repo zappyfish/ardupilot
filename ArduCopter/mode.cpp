@@ -42,6 +42,11 @@ Copter::Mode *Copter::mode_from_mode_num(const uint8_t mode)
             ret = &mode_acro;
             break;
 #endif
+#if MODE_TARGET_AUTO_ENABLED == ENABLED
+        case TARGET_AUTO:
+            ret = &mode_target_auto;
+            break;
+#endif
 
         case STABILIZE:
             ret = &mode_stabilize;
@@ -258,6 +263,12 @@ void Copter::exit_mode(Copter::Mode *&old_flightmode,
 #if AUTOTUNE_ENABLED == ENABLED
     if (old_flightmode == &mode_autotune) {
         mode_autotune.stop();
+    }
+#endif
+
+#if MODE_TARGET_AUTO_ENABLED == ENABLED
+    if (old_flightmode == &mode_target_auto) {
+        mode_target_auto.de_init();
     }
 #endif
 
@@ -577,6 +588,7 @@ void Copter::Mode::update_simple_mode(void) {
 
 bool Copter::Mode::set_mode(control_mode_t mode, mode_reason_t reason)
 {
+    AP_HAL::get_HAL().console->printf("switching to mode %d", mode);
     return copter.set_mode(mode, reason);
 }
 

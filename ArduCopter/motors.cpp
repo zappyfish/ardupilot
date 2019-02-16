@@ -240,12 +240,18 @@ bool Copter::init_arm_motors(const bool arming_from_gcs, const bool do_arming_ch
     ap.armed_with_switch = false;
     
     // return success
+    shouldSendArmingPacket = true;
+
     return true;
 }
 
 // init_disarm_motors - disarm motors
 void Copter::init_disarm_motors()
 {
+    shouldSendDisarmingPacket = true;
+
+    hal.console->printf("disarming\n");
+
     // return immediately if we are already disarmed
     if (!motors->armed()) {
         return;
@@ -292,6 +298,7 @@ void Copter::init_disarm_motors()
     hal.util->set_soft_armed(false);
 
     ap.in_arming_delay = false;
+
 }
 
 // motors_output - send output to motors library which will adjust and send to ESCs and servos
