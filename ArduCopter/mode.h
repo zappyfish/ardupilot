@@ -1267,9 +1267,13 @@ private:
 
     bool saw_target;
     bool should_land;
+    bool should_go_up;
 
     void move_to_target();
     void land();
+    void square();
+
+    uint32_t m_run_count;
 
     packet_manager::packet_callback target_location_callback;
 

@@ -10,22 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bdd41f6-e2fb-463a-b12e-8823b7a965fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ArduCopter/mode_target_auto.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/Copter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/Copter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/Copter.h" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/Copter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/GCS_Mavlink.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/GCS_Mavlink.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/Parameters.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/Parameters.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/UserCode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/UserCode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/config.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/defines.h" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/defines.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/mode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/mode.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArduCopter/mode.h" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/mode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/mode_althold.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/mode_althold.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/motors.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/motors.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/AP_HAL_PX4/HAL_PX4_Class.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/AP_HAL_PX4/HAL_PX4_Class.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/AP_SerialManager/AP_SerialManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/AP_SerialManager/AP_SerialManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/Jetson-Processing" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/Jetson-Processing" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ArduCopter/mode_target_auto.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/mode_target_auto.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/uart/nrf_consts.h" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/Jetson-Processing/communications/rf/packets/nrf_consts.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,22 +25,23 @@
     <session id="-1704537030">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="10" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.131" value="1" />
-          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Makefile" value="11" />
           <entry key="Vagrantfile" value="1" />
-          <entry key="cpp" value="170" />
-          <entry key="h" value="136" />
+          <entry key="cpp" value="190" />
+          <entry key="h" value="150" />
           <entry key="inc" value="9" />
           <entry key="launch" value="1" />
           <entry key="md" value="1" />
@@ -66,7 +55,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ObjectiveC" value="306" />
+          <entry key="ObjectiveC" value="340" />
           <entry key="PLAIN_TEXT" value="73" />
           <entry key="Python" value="27" />
         </counts>
@@ -74,8 +63,8 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="454" />
-          <entry key="cpp" value="17630" />
-          <entry key="h" value="3992" />
+          <entry key="cpp" value="19647" />
+          <entry key="h" value="4051" />
           <entry key="inc" value="182" />
           <entry key="mk" value="339" />
           <entry key="py" value="228" />
@@ -87,7 +76,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Doxygen file" value="2" />
-          <entry key="ObjectiveC" value="21620" />
+          <entry key="ObjectiveC" value="23696" />
           <entry key="PLAIN_TEXT" value="1034" />
           <entry key="Python" value="700" />
         </counts>
@@ -97,18 +86,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ArduCopter/mode.h">
+        <entry file="file://$PROJECT_DIR$/ArduCopter/UserCode.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="1274" selection-start-line="1274" selection-end-line="1274" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ArduCopter/mode_acro.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-59">
+            <state relative-caret-position="132">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -117,13 +98,70 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PI_2D.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-573" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PI_2D.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-850" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PID_2D.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="72" column="23" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PID_2D.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="118" column="21" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libraries/AC_PID/examples/AC_PID_test/AC_PID_test.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-100" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PID.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ArduCopter/mode_target_auto.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
+            <state relative-caret-position="675">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="e#43#62#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PID.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1245">
+              <caret line="83" column="23" selection-start-line="83" selection-start-column="3" selection-end-line="83" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -137,74 +175,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_AttitudeControl.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1157">
-              <caret line="132" column="25" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ArduCopter/mode.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7786">
-              <caret line="590" column="68" selection-start-line="590" selection-start-column="68" selection-end-line="590" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_PosControl.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="221" column="32" selection-start-line="221" selection-start-column="30" selection-end-line="221" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libraries/AP_InertialNav/AP_InertialNav.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ArduCopter/mode_althold.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_PosControl.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="948" column="7" selection-start-line="948" selection-start-column="4" selection-end-line="948" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>extern const AP_HAL::HAL&amp; hal;</find>
-      <find>de_init</find>
-      <find>set_speed_z</find>
-      <find>g_dt</find>
-      <find>input_euler_angle</find>
-      <find>_clim</find>
-      <find>climb ra</find>
-      <find>_speed_up_cms</find>
-      <find>start</find>
-      <find>start(</find>
       <find>set_climb</find>
       <find>set_alt_target_from_climb</find>
       <find>set_Accel_z</find>
@@ -213,7 +187,6 @@
       <find>ap_hal</find>
       <find>run</find>
       <find>hal.cons</find>
-      <find>al_hal</find>
       <find>set</find>
       <find>hal.co</find>
       <find>set_accel_z</find>
@@ -221,10 +194,21 @@
       <find>hal.g</find>
       <find>altitude</find>
       <find>throttle</find>
-      <find>ack_pack</find>
       <find>input_eu</find>
       <find>hal</find>
       <find>printf</find>
+      <find>al_hal</find>
+      <find>ack_pack</find>
+      <find>input_eul</find>
+      <find>prin</find>
+      <find>mode</find>
+      <find>shouldsendarming</find>
+      <find>m_run_count</find>
+      <find>sqrt</find>
+      <find>land(</find>
+      <find>set_input_filter</find>
+      <find>set_input_filter_all</find>
+      <find>-250</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -276,14 +260,14 @@
         <option value="$PROJECT_DIR$/ArduCopter/Parameters.cpp" />
         <option value="$PROJECT_DIR$/ArduCopter/defines.h" />
         <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/directions_packet.cpp" />
-        <option value="$PROJECT_DIR$/ArduCopter/UserCode.cpp" />
-        <option value="$PROJECT_DIR$/ArduCopter/mode.h" />
-        <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp" />
         <option value="$PROJECT_DIR$/ArduCopter/mode.cpp" />
         <option value="$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_PosControl.h" />
         <option value="$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_PosControl.cpp" />
-        <option value="$PROJECT_DIR$/ArduCopter/mode_target_auto.cpp" />
         <option value="$PROJECT_DIR$/ArduCopter/mode_althold.cpp" />
+        <option value="$PROJECT_DIR$/ArduCopter/mode.h" />
+        <option value="$PROJECT_DIR$/ArduCopter/UserCode.cpp" />
+        <option value="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp" />
+        <option value="$PROJECT_DIR$/ArduCopter/mode_target_auto.cpp" />
       </list>
     </option>
   </component>
@@ -299,9 +283,11 @@
     </packageJsonPaths>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="855" />
+    <option name="y" value="26" />
+    <option name="width" value="825" />
+    <option name="height" value="952" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -309,7 +295,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,6 +317,27 @@
               <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
               <item name="libraries" type="462c0819:PsiDirectoryNode" />
               <item name="AC_AttitudeControl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="AC_PID" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="AC_PID" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="AC_PID" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
+              <item name="AC_PID_test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
@@ -362,6 +368,20 @@
               <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
               <item name="libraries" type="462c0819:PsiDirectoryNode" />
               <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="applications" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
@@ -400,12 +420,68 @@
               <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
               <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
               <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="communications" type="462c0819:PsiDirectoryNode" />
+              <item name="rf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="communications" type="462c0819:PsiDirectoryNode" />
+              <item name="rf" type="462c0819:PsiDirectoryNode" />
+              <item name="comms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="communications" type="462c0819:PsiDirectoryNode" />
+              <item name="rf" type="462c0819:PsiDirectoryNode" />
+              <item name="packets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="experiments" type="462c0819:PsiDirectoryNode" />
+              <item name="subscale2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="systems" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
+              <item name="Jetson-Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ardupilot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ardupilot" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
               <item name="RC_Channel" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -417,6 +493,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libraries/Jetson-Processing/communications/rf/packets" />
       <recent name="$PROJECT_DIR$/ArduCopter" />
       <recent name="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk" />
       <recent name="$PROJECT_DIR$/libraries" />
@@ -452,18 +529,21 @@
       <workItem from="1548959825917" duration="2070000" />
       <workItem from="1549117948316" duration="226000" />
       <workItem from="1549416522295" duration="21057000" />
-      <workItem from="1550124991296" duration="23093000" />
+      <workItem from="1550124991296" duration="27865000" />
+      <workItem from="1550504085978" duration="269000" />
+      <workItem from="1550506418551" duration="9534000" />
+      <workItem from="1550600008441" duration="2855000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112732000" />
+    <option name="totallyTimeSpent" value="130162000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16300367" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16849817" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -501,103 +581,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ArduCopter/AP_Arming.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8730">
-          <caret line="613" column="70" selection-start-line="613" selection-start-column="64" selection-end-line="613" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AP_Radio/AP_Radio.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AP_Radio/telem_structure.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AP_HAL_PX4/RCInput.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AP_HAL_PX4/RCOutput.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9144" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/motors.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/land_detector.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AP_InertialNav/AP_InertialNav_NavEKF.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="40" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/crash_check.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/mode_guided.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3109" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AC_WPNav/AC_Circle.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-558" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AC_WPNav/AC_Circle.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="57" column="52" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_AttitudeControl_Multi.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_PosControl_Sub.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/Attitude.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="160" column="21" selection-start-line="160" selection-start-column="3" selection-end-line="160" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/mode_loiter.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="74" column="13" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/RC_Channel/RC_Channel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="73" column="29" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libraries/AP_AHRS/AP_AHRS.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -678,41 +661,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/directions_packet.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/directions_packet.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/UserCode.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/uart/pixhawk_uart.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -727,9 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="231" column="11" selection-start-line="231" selection-start-column="11" selection-end-line="231" selection-end-column="11" />
-          <folding>
-            <element signature="e#8091#8137#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,34 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_AttitudeControl.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="252" column="42" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/Copter.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="280" column="14" selection-start-line="280" selection-start-column="9" selection-end-line="280" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/uart/pixhawk_uart.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/mode.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="1274" selection-start-line="1274" selection-end-line="1274" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ArduCopter/mode.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7786">
@@ -775,34 +696,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/mode_target_auto.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
-          <folding>
-            <element signature="e#43#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_AttitudeControl.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1157">
-          <caret line="132" column="25" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libraries/AP_InertialNav/AP_InertialNav.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/mode_althold.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -822,9 +719,179 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ArduCopter/mode_acro.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-59">
+        <state relative-caret-position="-119" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/experiments/subscale2/main.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/systems/flight_system.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/systems/flight_system.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/systems/subscale_2_system.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/systems/subscale_2_system.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/mode_althold.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="106" column="70" selection-start-line="106" selection-start-column="70" selection-end-line="106" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_AttitudeControl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="132" column="25" selection-start-line="132" selection-start-column="17" selection-end-line="132" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_AttitudeControl.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3780">
+          <caret line="252" column="34" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/uart/pixhawk_uart.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/uart/jetson_uart.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/arming_packet.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/arming_packet.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/motors.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3630">
+          <caret line="242" column="20" selection-start-line="242" selection-start-column="4" selection-end-line="242" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/Copter.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14145">
+          <caret line="943" selection-start-line="943" selection-end-line="943" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/mode.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="80" column="15" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/packets/directions_packet.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/uart/pixhawk_uart.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PI_2D.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-573" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PI_2D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-850" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PID_2D.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="118" column="21" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PID_2D.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="72" column="23" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PID.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_PID/AC_PID.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="83" column="23" selection-start-line="83" selection-start-column="3" selection-end-line="83" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_PID/examples/AC_PID_test/AC_PID_test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/UserCode.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/mode_target_auto.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#43#62#0" expanded="true" />
           </folding>
         </state>
       </provider>

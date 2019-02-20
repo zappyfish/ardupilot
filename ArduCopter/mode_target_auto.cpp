@@ -7,6 +7,16 @@
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/directions_packet.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h"
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/mode_packet.h"
+
+#define SAW_TARGET_MIN_ALTITUDE 500
+#define DID_NOT_SEE_TARGET_MAX_ALTITUDE 1000
+#define SAW_TARGET_CLIMB_RATE -100
+#define DID_NOT_SEE_TARGET_CLIMB_RATE 100
+#define RUN_CALLS_PER_SECOND 400
+#define SQUARE_TARGET_ALTITUDE 600
+#define TEST_ANGLE 600
+#define AUTONOMOUS_DESCEND_RATE -150
 
 bool Copter::ModeTargetAuto::init(bool ignore_checks) {
     // Superclass method??
@@ -16,6 +26,8 @@ bool Copter::ModeTargetAuto::init(bool ignore_checks) {
 
     should_land = false;
     saw_target = false;
+    should_go_up = false;
+    m_run_count = 0;
 
     target_location_callback.name = directions_packet::PACKET_NAME;
     target_location_callback.args = this;
@@ -26,15 +38,58 @@ bool Copter::ModeTargetAuto::init(bool ignore_checks) {
 
     pos_control->set_speed_z(-400, 400);
 
+    mode_packet* packet = new mode_packet(true);
+    packet_manager::get_instance().send_packet(packet);
+
     return true;
 }
 
 void Copter::ModeTargetAuto::de_init() {
     packet_manager::get_instance().remove_packet_callback(&target_location_callback);
+    mode_packet* packet = new mode_packet(false);
+    packet_manager::get_instance().send_packet(packet);
+}
+
+void Copter::ModeTargetAuto::square() {
+    float target_pitch;
+    float target_roll;
+    if (m_run_count < 3 * RUN_CALLS_PER_SECOND) {
+        target_pitch = TEST_ANGLE;
+        target_roll = 0;
+    } else if (m_run_count < 6 * RUN_CALLS_PER_SECOND) {
+        target_pitch = 0;
+        target_roll = TEST_ANGLE;
+    } else if (m_run_count < 9 * RUN_CALLS_PER_SECOND) {
+        target_pitch = -TEST_ANGLE;
+        target_roll = 0;
+    } else if (m_run_count < 12 * RUN_CALLS_PER_SECOND) {
+        target_pitch = 0;
+        target_roll = -TEST_ANGLE;
+    } else {
+        m_run_count = 0;
+        target_pitch = TEST_ANGLE;
+        target_roll = 0;
+    }
+    m_run_count++;
+    attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, 0);
+
+    pos_control->set_alt_target_from_climb_rate_ff(0, G_Dt, false); // TODO: Should this be 0?
 }
 
 void Copter::ModeTargetAuto::run() {
     motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
+//    if (inertial_nav.get_position().z >= DID_NOT_SEE_TARGET_MAX_ALTITUDE) {
+//        should_go_up = false;
+//    } else if (inertial_nav.get_position().z <= SAW_TARGET_MIN_ALTITUDE) {
+//        should_go_up = true;
+//    }
+//    float target_climb_rate = SAW_TARGET_CLIMB_RATE;
+//    if (should_go_up) {
+//        target_climb_rate = DID_NOT_SEE_TARGET_CLIMB_RATE;
+//    }
+//    pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
+//    attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(0, 0, 0);
+    pos_control->set_alt_target_from_climb_rate_ff(0, G_Dt, false);
     if (saw_target) {
         if (should_land) {
             land();
@@ -44,28 +99,29 @@ void Copter::ModeTargetAuto::run() {
     } else {
         search_for_target();
     }
+    // square();
     pos_control->update_z_controller();
-    hal.console->printf("z: %f\n", inertial_nav.get_position().z);
 }
 
 void Copter::ModeTargetAuto::move_to_target() {
-//    float target_roll, target_pitch, target_yaw_rate;
-//    target_yaw_rate = 0; // Don't yaw
-//
-//    set_lean_angles(target_roll, target_pitch);
+    float target_roll, target_pitch, target_yaw_rate;
+    target_yaw_rate = 0; // Don't yaw
+
+    set_lean_angles(target_roll, target_pitch);
+    attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate);
 //
 //    hal.console->printf("roll: %f, pitch: %f", target_roll, target_pitch);
 //
 //    target_roll = 1000;
 //    target_pitch = 1000;
-
-    float target_climb_rate = -400;
-
-    if (inertial_nav.get_position().z <= 20) {
-        target_climb_rate = 0;
-    }
-
-    pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
+//
+//    float target_climb_rate = SAW_TARGET_CLIMB_RATE;
+//
+//    if (inertial_nav.get_position().z <= SAW_TARGET_MIN_ALTITUDE) {
+//        target_climb_rate = 0;
+//    }
+//
+//    pos_control->set_alt_target_from_climb_rate_ff(0, G_Dt, false);
 
     // pos_control->set_accel_z(-400);
 
@@ -76,58 +132,55 @@ void Copter::ModeTargetAuto::set_lean_angles(float &target_roll, float &target_p
     // TODO: use x and y here
     // update angle targets that will be passed to stabilize controller
 
-    // accel_forward = target_y (speed) - current_y (speed)
-    // accel_right = target_x (speed) - current_x (speed)
 
-    Vector3f current_vel = pos_control->get_desired_velocity();
-    // Vector2f ground_speed = ahrs.groundspeed_vector();
-
-    float current_vel_mag = safe_sqrt((current_vel.x * current_vel.x) + (current_vel.y * current_vel.y));
-    float desired_vel_mag = safe_sqrt((target_x * target_x) + (target_y * target_y));
-
-    float accel_forward = 0;
-    float accel_right = 0;
-
-    // in result, x is forward, y is right
-    Vector2f earth_xy_velocity;
-    earth_xy_velocity.x = current_vel.x;
-    earth_xy_velocity.y = current_vel.y;
-    Vector2f body_frame_current_vel_xy = ahrs.rotate_earth_to_body2D(earth_xy_velocity);
-
-    if (desired_vel_mag > 0.0) {
-        float scale_factor = (float)fabsf(current_vel_mag / desired_vel_mag);
-        accel_forward = (target_y * scale_factor) - (float)body_frame_current_vel_xy.x;
-        accel_right = (target_x * scale_factor) - (float)body_frame_current_vel_xy.y;
-    }
-
-    target_pitch = atanf(-accel_forward/(GRAVITY_MSS * 100.0f))*(18000.0f/M_PI);
-    float cos_pitch_target = cosf(target_pitch*M_PI/18000.0f);
-    target_roll = atanf(accel_right*cos_pitch_target/(GRAVITY_MSS * 100.0f))*(18000.0f/M_PI);
+    // target_pitch = -TEST_ANGLE *((target_y / 5.0) * (target_y / 5.0)) ;
+//    if (target_y > 0) {
+//        target_pitch = -TEST_ANGLE;
+//    } else {
+//        target_pitch = TEST_ANGLE;
+//    }
+//    // target_roll = TEST_ANGLE* ((target_x / 5.0) * (target_x / 5.0));
+//    if (target_x > 0) {
+//        target_roll = TEST_ANGLE;
+//    } else {
+//        target_roll = -TEST_ANGLE;
+//    }
+    target_pitch = -target_y * 5;
+    target_roll = target_x * 5;
 }
 
 void Copter::ModeTargetAuto::land() {
     // TODO: complete me
     // TODO: set velocity to 0
-    float target_climb_rate = 400;
+    float target_roll, target_pitch, target_yaw_rate;
+    target_yaw_rate = 0; // Don't yaw
 
-    if (inertial_nav.get_position().z >= 40) {
-        target_climb_rate = 0;
-    }
-
-    pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
+    set_lean_angles(target_roll, target_pitch);
+    attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(target_roll, target_pitch, target_yaw_rate);
+    pos_control->set_alt_target_from_climb_rate_ff(AUTONOMOUS_DESCEND_RATE, G_Dt, false);
+//    float target_climb_rate = DID_NOT_SEE_TARGET_CLIMB_RATE;
+//
+//    if (inertial_nav.get_position().z >= DID_NOT_SEE_TARGET_MAX_ALTITUDE) {
+//        target_climb_rate = 0;
+//    }
+//
+//    pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
     // pos_control->set_accel_z(250);
+
 }
 
 void Copter::ModeTargetAuto::search_for_target() {
     // TODO: Complete me
     // TODO: set velocity to 0
-    float target_climb_rate = 400;
-
-    if (inertial_nav.get_position().z >= 40) {
-        target_climb_rate = 0;
-    }
-
-    pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
+    attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(0, 0, 0);
+    pos_control->set_alt_target_from_climb_rate_ff(0, G_Dt, false);
+//    float target_climb_rate = DID_NOT_SEE_TARGET_CLIMB_RATE;
+//
+//    if (inertial_nav.get_position().z >= DID_NOT_SEE_TARGET_MAX_ALTITUDE) {
+//        target_climb_rate = 0;
+//    }
+//
+//    pos_control->set_alt_target_from_climb_rate_ff(target_climb_rate, G_Dt, false);
     // pos_control->set_accel_z(250);
 }
 
