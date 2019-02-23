@@ -1260,10 +1260,10 @@ public:
 
 private:
 
-    float target_x;
-    float target_y;
+    float auto_roll;
+    float auto_pitch;
 
-    void set_lean_angles(float &target_roll, float &target_pitch);
+    void set_lean_angles(float angle_x, float angle_y);
 
     bool saw_target;
     bool should_land;
