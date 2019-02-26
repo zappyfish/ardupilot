@@ -12,8 +12,8 @@
 #define RUN_CALLS_PER_SECOND 400
 #define SQUARE_TARGET_ALTITUDE 600
 #define TEST_ANGLE 600
-#define AUTONOMOUS_DESCEND_RATE -150
-#define MAX_AUTO_ANGLE 2000
+#define AUTONOMOUS_DESCEND_RATE -75
+#define MAX_AUTO_ANGLE 1000
 
 bool Copter::ModeTargetAuto::init(bool ignore_checks) {
     // Superclass method??
@@ -81,12 +81,11 @@ void Copter::ModeTargetAuto::square() {
 void Copter::ModeTargetAuto::run() {
     motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
     if (saw_target) {
-//        if (should_land) {
-//            land();
-//        } else {
-//            move_to_target();
-//        }
-        move_to_target();
+        if (should_land) {
+            land();
+        } else {
+            move_to_target();
+        }
     } else {
         search_for_target();
     }
