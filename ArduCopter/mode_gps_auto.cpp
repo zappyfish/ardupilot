@@ -10,7 +10,7 @@
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/mode_packet.h"
 
 
-bool Copter::ModeGPSAuto::init(bool ignore_checks)
+bool Copter::ModeGPSAuto::init(bool ignore_checks) {
 
     mode_packet* packet = new mode_packet(true);
     packet_manager::get_instance().send_packet(packet);
@@ -18,7 +18,7 @@ bool Copter::ModeGPSAuto::init(bool ignore_checks)
     return true;
 }
 
-void Copter::ModeTargetAuto::de_init() {
+void Copter::ModeGPSAuto::de_init() {
     mode_packet* packet = new mode_packet(false);
     packet_manager::get_instance().send_packet(packet);
 }
@@ -27,8 +27,8 @@ void Copter::ModeGPSAuto::run() {
     motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
     // Go to desired gps
-    if (has_destination) {
-        pos_control->set_xy_target(destination_x, destination_y);
+    if (copter.has_destination.load()) {
+        pos_control->set_xy_target(copter.destination_x, copter.destination_y);
     } else {
         // TODO: loiter
         precision_loiter_xy();

@@ -190,7 +190,7 @@ public:
     // Some VADL variables
     std::atomic<bool> shouldSendArmingPacket;
     std::atomic<bool> shouldSendDisarmingPacket;
-    std::atmoic<bool> has_destination;
+    std::atomic<bool> has_destination;
 
     int destination_x;
     int destination_y;

@@ -47,7 +47,7 @@ void Copter::userhook_FastLoop()
     // Check packets every 10ms
     packet_manager::get_instance().check_packets();
 
-    int range = RC_INPUT_MAX_PULSEWIDTH - RC_INPUT_MAX_PULSEWIDTH;
+    //int range = RC_INPUT_MAX_PULSEWIDTH - RC_INPUT_MAX_PULSEWIDTH;
     // Check to see if beacon is being deployed
 //    float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MAX_PULSEWIDTH)) / range;
 //    if (percent_pwm_beacon >= 0.5) {
