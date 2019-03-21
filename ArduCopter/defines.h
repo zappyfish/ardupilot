@@ -114,6 +114,7 @@ enum control_mode_t {
     FLOWHOLD  =    22,  // FLOWHOLD holds position with optical flow without rangefinder
     FOLLOW    =    23,  // follow attempts to follow another vehicle or ground station
     TARGET_AUTO =  25,  // VADL Target detection autonomous control
+    GPS_AUTO =     26,  // VADL GPS autonomous mode
 };
 
 enum mode_reason_t {

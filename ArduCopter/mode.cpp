@@ -47,6 +47,11 @@ Copter::Mode *Copter::mode_from_mode_num(const uint8_t mode)
             ret = &mode_target_auto;
             break;
 #endif
+#if MODE_GPS_AUTO_ENABLED == ENABLED
+        case GPS_AUTO:
+            ret = &mode_gps_auto;
+            break;
+#endif
 
         case STABILIZE:
             ret = &mode_stabilize;

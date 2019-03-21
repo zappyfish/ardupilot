@@ -21,6 +21,14 @@ void Copter::userhook_init()
     acknowledge_callback.args = this;
 
     packet_manager::get_instance().set_packet_callback(&acknowledge_callback);
+
+    // Now create a gps destination callback
+    destination_set_callback.name = gps_values_packet::PACKET_NAME;
+    destination_set_callback.callback = &Copter::vadl_destination_callback;
+    destination_set_callback.args = this;
+
+    packet_manager::get_instance().set_packet_callback(&destination_set_callback);
+
 }
 #endif
 
@@ -41,12 +49,12 @@ void Copter::userhook_FastLoop()
 
     int range = RC_INPUT_MAX_PULSEWIDTH - RC_INPUT_MAX_PULSEWIDTH;
     // Check to see if beacon is being deployed
-    float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MAX_PULSEWIDTH)) / range;
-    if (percent_pwm_beacon >= 0.5) {
-        // Send transmit gps coords
-        gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
-        packet_manager::get_instance().send_packet(gps_packet);
-    }
+//    float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MAX_PULSEWIDTH)) / range;
+//    if (percent_pwm_beacon >= 0.5) {
+//        // Send transmit gps coords
+//        gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
+//        packet_manager::get_instance().send_packet(gps_packet);
+//    }
 }
 #endif
 
@@ -120,4 +128,15 @@ void Copter::vadl_arming_callback(const char *packet_type, std::vector<const cha
     } else if (vadl_copter->shouldSendDisarmingPacket.load()) {
         vadl_copter->shouldSendDisarmingPacket = false;
     }
+}
+
+void Copter::vadl_destination_callback(const char *packet_type, std::vector<const char *> keys,
+                                       std::vector<const char *> values, void *args) {
+    Copter* vadl_copter = static_cast<Copter*>(args);
+
+    gps_values_packet received_packet(keys, values);
+    vadl_copter->destination_x = received_packet.get_x();
+    vadl_copter->destination_y = received_packet.get_y();
+
+    vadl_copter->has_destination = true;
 }

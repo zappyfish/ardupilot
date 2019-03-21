@@ -190,7 +190,15 @@ public:
     // Some VADL variables
     std::atomic<bool> shouldSendArmingPacket;
     std::atomic<bool> shouldSendDisarmingPacket;
+    std::atmoic<bool> has_destination;
+
+    int destination_x;
+    int destination_y;
+
     packet_manager::packet_callback acknowledge_callback;
+    packet_manager::packet_callback destination_set_callback;
+
+
 
     friend class GCS_MAVLINK_Copter;
     friend class GCS_Copter;
@@ -955,6 +963,7 @@ private:
 
     // VADL
     static void vadl_arming_callback(const char *packet_type, std::vector<const char *> keys, std::vector<const char *> values, void *args);
+    static void vadl_destination_callback(const char *packet_type, std::vector<const char *> keys, std::vector<const char *> values, void *args);
 
 
 #include "mode.h"
@@ -976,6 +985,9 @@ private:
 #endif
 #if MODE_TARGET_AUTO_ENABLED == ENABLED
     ModeTargetAuto mode_target_auto;
+#endif
+#if MODE_GPS_AUTO_ENABLED == ENABLED
+    ModeGPSAuto mode_gps_auto;
 #endif
 #if MODE_BRAKE_ENABLED == ENABLED
     ModeBrake mode_brake;

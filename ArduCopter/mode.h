@@ -1283,4 +1283,28 @@ protected:
 
     const char *name() const override { return "VADL AUTO TARGET"; }
     const char *name4() const override { return "TARG"; }
+
+
+};
+
+class ModeGPSAuto: public ModeAuto {
+
+public:
+
+    using Copter::ModeAuto::Mode;
+
+    bool init(bool ingore_checks) override;
+    void de_init();
+    void run() override;
+    bool requires_GPS() const override { return true; }
+
+private:
+
+    void precision_loiter_xy();
+
+protected:
+
+    const char *name() const override { return "VADL AUTO GPS"; }
+    const char *name4() const override { return "AGPS"; }
+
 };

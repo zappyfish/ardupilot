@@ -36,7 +36,8 @@ Copter::Copter(void)
     param_loader(var_info),
     flightmode(&mode_stabilize),
     shouldSendDisarmingPacket(false),
-    shouldSendArmingPacket(false)
+    shouldSendArmingPacket(false),
+    has_destination(false)
 {
     // init sensor error logging flags
     sensor_health.baro = true;
