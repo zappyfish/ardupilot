@@ -23,9 +23,15 @@ bool Copter::ModeGPSAuto::init(bool ignore_checks) {
     go_to_x = pos.x + VADL_TEST_GPS_DISTANCE_CM;
     go_to_y = pos.y;
 
-    pos_control->set_alt_target_to_current_alt();
-    pos_control->set_xy_target(go_to_x, go_to_y);
+//    pos_control->set_alt_target_to_current_alt();
+//    pos_control->set_xy_target(go_to_x, go_to_y);
 
+    Vector3f destination;
+    destination.x = go_to_x;
+    destination.y = go_to_y;
+    destination.z = target_z;
+
+    wp_nav->set_wp_destination(destination, false); // TODO: check on the second arg, terrain_alt flag
 
     return true;
 }
@@ -36,22 +42,16 @@ void Copter::ModeGPSAuto::de_init() {
 }
 
 void Copter::ModeGPSAuto::run() {
+    // set motors to full range
     motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
-    pos_control->set_speed_xy(get_speed_cm());
-    pos_control->update_xy_controller(1.0f);
+    // run waypoint controller
+    copter.failsafe_terrain_set_status(wp_nav->update_wpnav());
 
-//    pos_control->set_alt_target_to_current_alt();
-//    // Go to desired gps
-//    if (copter.has_destination.load()) {
-//        pos_control->set_xy_target(copter.destination_x, copter.destination_y);
-//    } else {
-//        // TODO: loiter
-//        precision_loiter_xy();
-//    }
-//    pos_control->set_xy_target(go_to_x, go_to_y);
-
+    // call z-axis position controller (wpnav should have already updated it's alt target)
     pos_control->update_z_controller();
+
+    attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(wp_nav->get_roll(), wp_nav->get_pitch(), 0); // 0 for target yaw rate
 }
 
 

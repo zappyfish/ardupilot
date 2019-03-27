@@ -10,7 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bdd41f6-e2fb-463a-b12e-8823b7a965fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,7 +64,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="454" />
-          <entry key="cpp" value="23140" />
+          <entry key="cpp" value="23415" />
           <entry key="h" value="4748" />
           <entry key="inc" value="182" />
           <entry key="mk" value="339" />
@@ -78,7 +77,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Doxygen file" value="2" />
-          <entry key="ObjectiveC" value="27886" />
+          <entry key="ObjectiveC" value="28161" />
           <entry key="PLAIN_TEXT" value="1034" />
           <entry key="Python" value="700" />
         </counts>
@@ -87,11 +86,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+            <state relative-caret-position="261">
+              <caret line="33" column="101" selection-start-line="33" selection-start-column="101" selection-end-line="33" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -112,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_PosControl.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="92">
-              <caret line="196" column="35" lean-forward="true" selection-start-line="196" selection-start-column="35" selection-end-line="196" selection-end-column="35" />
+              <caret line="196" column="35" selection-start-line="196" selection-start-column="35" selection-end-line="196" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -121,16 +120,16 @@
         <entry file="file://$PROJECT_DIR$/libraries/AC_WPNav/AC_Loiter.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="377">
-              <caret line="211" column="55" lean-forward="true" selection-start-line="211" selection-start-column="55" selection-end-line="211" selection-end-column="55" />
+              <caret line="211" column="55" selection-start-line="211" selection-start-column="55" selection-end-line="211" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ArduCopter/mode_auto.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="812" column="5" lean-forward="true" selection-start-line="812" selection-start-column="5" selection-end-line="812" selection-end-column="5" />
+            <state relative-caret-position="473">
+              <caret line="1094" column="12" selection-start-line="1094" selection-start-column="4" selection-end-line="1094" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -138,8 +137,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libraries/AC_WPNav/AC_WPNav.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="201" column="29" selection-start-line="201" selection-start-column="29" selection-end-line="201" selection-end-column="29" />
+            <state relative-caret-position="221">
+              <caret line="200" column="49" selection-start-line="200" selection-start-column="38" selection-end-line="200" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -184,8 +183,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_</find>
-      <find>set_alt_target_to</find>
       <find>z</find>
       <find>get_pos</find>
       <find>set_Alt_target_to</find>
@@ -210,10 +207,12 @@
       <find>update_wpnav</find>
       <find>set_destin</find>
       <find>ekf</find>
-      <find>update_vel_controller</find>
-      <find>wp_start</find>
       <find>set_wp_destination</find>
+      <find>update_vel_controller</find>
+      <find>get_</find>
       <find>run</find>
+      <find>wp_start</find>
+      <find>destination</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -271,8 +270,8 @@
         <option value="$PROJECT_DIR$/ArduCopter/UserCode.cpp" />
         <option value="$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_PosControl.h" />
         <option value="$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_PosControl.cpp" />
-        <option value="$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp" />
         <option value="$PROJECT_DIR$/ArduCopter/mode_auto.cpp" />
+        <option value="$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp" />
       </list>
     </option>
   </component>
@@ -485,7 +484,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161673000" />
+    <option name="totallyTimeSpent" value="161935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="967" extended-state="0" />
@@ -815,35 +814,35 @@
     <entry file="file://$PROJECT_DIR$/libraries/AC_WPNav/AC_Loiter.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="211" column="55" lean-forward="true" selection-start-line="211" selection-start-column="55" selection-end-line="211" selection-end-column="55" />
+          <caret line="211" column="55" selection-start-line="211" selection-start-column="55" selection-end-line="211" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libraries/AC_AttitudeControl/AC_PosControl.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="196" column="35" lean-forward="true" selection-start-line="196" selection-start-column="35" selection-end-line="196" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraries/AC_WPNav/AC_WPNav.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="201" column="29" selection-start-line="201" selection-start-column="29" selection-end-line="201" selection-end-column="29" />
+          <caret line="196" column="35" selection-start-line="196" selection-start-column="35" selection-end-line="196" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ArduCopter/mode_auto.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="812" column="5" lean-forward="true" selection-start-line="812" selection-start-column="5" selection-end-line="812" selection-end-column="5" />
+        <state relative-caret-position="473">
+          <caret line="1094" column="12" selection-start-line="1094" selection-start-column="4" selection-end-line="1094" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libraries/AC_WPNav/AC_WPNav.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="200" column="49" selection-start-line="200" selection-start-column="38" selection-end-line="200" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="33" column="101" selection-start-line="33" selection-start-column="101" selection-end-line="33" selection-end-column="101" />
         </state>
       </provider>
     </entry>
