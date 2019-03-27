@@ -1300,7 +1300,11 @@ public:
 
 private:
 
-    void precision_loiter_xy();
+    int target_z;
+    int go_to_x;
+    int go_to_y;
+
+    float get_speed_cm();
 
 protected:
 

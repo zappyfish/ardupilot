@@ -38,7 +38,7 @@ bool Copter::ModeTargetAuto::init(bool ignore_checks) {
 
     pos_control->set_speed_z(-400, 400);
 
-    mode_packet* packet = new mode_packet(true);
+    mode_packet* packet = new mode_packet(true, true);
     packet_manager::get_instance().send_packet(packet);
 
     return true;
@@ -46,7 +46,7 @@ bool Copter::ModeTargetAuto::init(bool ignore_checks) {
 
 void Copter::ModeTargetAuto::de_init() {
     packet_manager::get_instance().remove_packet_callback(&target_location_callback);
-    mode_packet* packet = new mode_packet(false);
+    mode_packet* packet = new mode_packet(false, false);
     packet_manager::get_instance().send_packet(packet);
     saw_target = false;
     should_land = false;
@@ -136,7 +136,7 @@ void Copter::ModeTargetAuto::target_packet_callback(const char *packet_type, std
                                             std::vector<const char *> values, void *args) {
     directions_packet packet(keys, values);
     ModeTargetAuto* mode = static_cast<ModeTargetAuto*>(args);
-    mode->set_lean_angles(packet.get_x(), packet.get_y());
+    mode->set_lean_angles(-packet.get_x(), -packet.get_y());
     mode->saw_target = packet.get_saw_target();
     mode->should_land = packet.get_should_land();
 }

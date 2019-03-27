@@ -5,6 +5,7 @@
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/ack_packet.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/arming_packet.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/gps_values_packet.h"
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/mode_packet.h"
 
 #define VADL_SERVO_CHANNEL 5
 
@@ -41,20 +42,20 @@ void Copter::userhook_FastLoop()
     int16_t pitch = ahrs.pitch_sensor;
     uint16_t yaw = ahrs.yaw_sensor;
     // Vector3f accel = ins.get_accel();
-    flight_packet *packet = new flight_packet(pos.x, pos.y, pos.z, roll, pitch, yaw);
+    flight_packet *packet = new flight_packet(pos.x, pos.y, pos.z, -roll, -pitch, yaw); // TODO: change me
     packet_manager::get_instance().send_packet(packet);
 
     // Check packets every 10ms
     packet_manager::get_instance().check_packets();
 
-    //int range = RC_INPUT_MAX_PULSEWIDTH - RC_INPUT_MAX_PULSEWIDTH;
     // Check to see if beacon is being deployed
-//    float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MAX_PULSEWIDTH)) / range;
-//    if (percent_pwm_beacon >= 0.5) {
-//        // Send transmit gps coords
-//        gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
-//        packet_manager::get_instance().send_packet(gps_packet);
-//    }
+    int range = RC_INPUT_MAX_PULSEWIDTH - RC_INPUT_MIN_PULSEWIDTH;
+    float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MIN_PULSEWIDTH)) / range;
+    if (percent_pwm_beacon >= 0.5) {
+        // Send transmit gps coords
+        gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
+        packet_manager::get_instance().send_packet(gps_packet);
+    }
 }
 #endif
 
@@ -100,6 +101,15 @@ void Copter::userhook_SuperSlowLoop()
         packet_manager::get_instance().send_packet(jetson_disarming_packet);
     }
 
+    mode_packet *packet;
+    if (flightmode == &(mode_target_auto)) {
+        packet = new mode_packet(true, true);
+    } else if (flightmode == &(mode_gps_auto)) {
+        packet = new mode_packet(true, false);
+    } else {
+        packet = new mode_packet(false, false);
+    }
+    packet_manager::get_instance().send_packet(packet);
 }
 #endif
 
