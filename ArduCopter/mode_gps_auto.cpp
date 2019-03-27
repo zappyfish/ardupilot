@@ -24,6 +24,8 @@ bool Copter::ModeGPSAuto::init(bool ignore_checks) {
     go_to_y = pos.y;
 
     pos_control->set_alt_target_to_current_alt();
+    pos_control->set_xy_target(go_to_x, go_to_y);
+
 
     return true;
 }
@@ -36,8 +38,8 @@ void Copter::ModeGPSAuto::de_init() {
 void Copter::ModeGPSAuto::run() {
     motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
-    pos_control->set_xy_target(go_to_x, go_to_y);
     pos_control->set_speed_xy(get_speed_cm());
+    pos_control->update_xy_controller(1.0f);
 
 //    pos_control->set_alt_target_to_current_alt();
 //    // Go to desired gps
