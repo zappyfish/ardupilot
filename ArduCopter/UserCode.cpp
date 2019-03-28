@@ -49,13 +49,13 @@ void Copter::userhook_FastLoop()
     packet_manager::get_instance().check_packets();
 
     // Check to see if beacon is being deployed
-    int range = RC_INPUT_MAX_PULSEWIDTH - RC_INPUT_MIN_PULSEWIDTH;
-    float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MIN_PULSEWIDTH)) / range;
-    if (percent_pwm_beacon >= 0.5) {
-        // Send transmit gps coords
-        gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
-        packet_manager::get_instance().send_packet(gps_packet);
-    }
+    //    int range = RC_INPUT_MAX_PULSEWIDTH - RC_INPUT_MIN_PULSEWIDTH;
+    //    float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MIN_PULSEWIDTH)) / range;
+    //    if (percent_pwm_beacon >= 0.5) {
+    //        // Send transmit gps coords
+    //        gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
+    //        packet_manager::get_instance().send_packet(gps_packet);
+    //    }
 }
 #endif
 
@@ -110,6 +110,11 @@ void Copter::userhook_SuperSlowLoop()
         packet = new mode_packet(false, false);
     }
     packet_manager::get_instance().send_packet(packet);
+
+    // Send location update
+    const Vector3f &pos = inertial_nav.get_position(); // 0 is imu instance
+    gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
+    packet_manager::get_instance().send_packet(gps_packet);
 }
 #endif
 
@@ -145,8 +150,15 @@ void Copter::vadl_destination_callback(const char *packet_type, std::vector<cons
     Copter* vadl_copter = static_cast<Copter*>(args);
 
     gps_values_packet received_packet(keys, values);
-    vadl_copter->destination_x = received_packet.get_x();
-    vadl_copter->destination_y = received_packet.get_y();
-
+//    vadl_copter->destination_x = received_packet.get_x();
+//    vadl_copter->destination_y = received_packet.get_y();
+//
     vadl_copter->has_destination = true;
+
+    Vector3f destination;
+    destination.x = received_packet.get_x();
+    destination.y = received_packet.get_y();
+    destination.z = vadl_copter->inertial_nav.get_altitude();
+
+    vadl_copter->wp_nav->set_wp_destination(destination, false); // TODO: check on the second arg, terrain_alt flag
 }

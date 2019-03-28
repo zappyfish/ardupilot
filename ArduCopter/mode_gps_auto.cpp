@@ -10,28 +10,18 @@
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/mode_packet.h"
 
-#define VADL_TEST_GPS_DISTANCE_CM 1000
-#define VADL_GPS_MODE_MAX_SPEED 50
+#define VADL_TEST_GPS_DISTANCE_CM 2000
+#define VADL_GPS_MODE_MAX_SPEED 100
 
 bool Copter::ModeGPSAuto::init(bool ignore_checks) {
 
     mode_packet* packet = new mode_packet(true, false);
     packet_manager::get_instance().send_packet(packet);
 
-    target_z = inertial_nav.get_altitude();
-    const Vector3f &pos = inertial_nav.get_position(); // 0 is imu instance
-    go_to_x = pos.x + VADL_TEST_GPS_DISTANCE_CM;
-    go_to_y = pos.y;
-
-//    pos_control->set_alt_target_to_current_alt();
-//    pos_control->set_xy_target(go_to_x, go_to_y);
-
-    Vector3f destination;
-    destination.x = go_to_x;
-    destination.y = go_to_y;
-    destination.z = target_z;
-
-    wp_nav->set_wp_destination(destination, false); // TODO: check on the second arg, terrain_alt flag
+    if (!copter.has_destination.load()) {
+        copter.initial_destination.set_alt_cm(inertial_nav.get_altitude(), Location_Class::ALT_FRAME::ALT_FRAME_ABOVE_HOME);
+        wp_nav->set_wp_destination(copter.initial_destination);
+    }
 
     return true;
 }

@@ -195,8 +195,13 @@ public:
     int destination_x;
     int destination_y;
 
+    Location_Class initial_destination;
+
     packet_manager::packet_callback acknowledge_callback;
     packet_manager::packet_callback destination_set_callback;
+
+    static constexpr float INITIAL_DESTINATION_LAT = 0.0;
+    static constexpr float INITIAL_DESTINATION_LON = 0.0;
 
 
 
