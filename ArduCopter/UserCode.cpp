@@ -6,6 +6,7 @@
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/arming_packet.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/gps_values_packet.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/mode_packet.h"
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/beacon_packet.h"
 
 #define VADL_SERVO_CHANNEL 5
 
@@ -49,13 +50,13 @@ void Copter::userhook_FastLoop()
     packet_manager::get_instance().check_packets();
 
     // Check to see if beacon is being deployed
-    //    int range = RC_INPUT_MAX_PULSEWIDTH - RC_INPUT_MIN_PULSEWIDTH;
-    //    float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MIN_PULSEWIDTH)) / range;
-    //    if (percent_pwm_beacon >= 0.5) {
-    //        // Send transmit gps coords
-    //        gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
-    //        packet_manager::get_instance().send_packet(gps_packet);
-    //    }
+    int range = RC_INPUT_MAX_PULSEWIDTH - RC_INPUT_MIN_PULSEWIDTH;
+    float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MIN_PULSEWIDTH)) / range;
+    if (percent_pwm_beacon >= 0.5) {
+        // Send transmit gps coords
+        beacon_packet *beacon = new beacon_packet();
+        packet_manager::get_instance().send_packet(beacon);
+    }
 }
 #endif
 
