@@ -200,8 +200,8 @@ public:
     packet_manager::packet_callback acknowledge_callback;
     packet_manager::packet_callback destination_set_callback;
 
-    static constexpr float INITIAL_DESTINATION_LAT = 36.140532;
-    static constexpr float INITIAL_DESTINATION_LON = -86.809986;
+    static constexpr float INITIAL_DESTINATION_LAT = 36.140477;
+    static constexpr float INITIAL_DESTINATION_LON = -86.809960;
     static constexpr long LAT_LON_MULTIPLIER = 10000000;
 
 
