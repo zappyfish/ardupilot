@@ -10,8 +10,8 @@
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/packet_manager.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/mode_packet.h"
 
-#define VADL_TEST_GPS_DISTANCE_CM 2000
-#define VADL_GPS_MODE_MAX_SPEED 100
+#define VADL_TEST_GPS_DISTANCE_CM 1000
+#define VADL_GPS_MODE_MAX_SPEED 300
 
 bool Copter::ModeGPSAuto::init(bool ignore_checks) {
 

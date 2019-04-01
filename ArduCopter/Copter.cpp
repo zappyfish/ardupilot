@@ -38,7 +38,8 @@ Copter::Copter(void)
     shouldSendDisarmingPacket(false),
     shouldSendArmingPacket(false),
     has_destination(false),
-    initial_destination(INITIAL_DESTINATION_LAT, INITIAL_DESTINATION_LON, 2000, Location_Class::ALT_FRAME::ALT_FRAME_ABOVE_HOME)
+    initial_destination(INITIAL_DESTINATION_LAT * LAT_LON_MULTIPLIER, INITIAL_DESTINATION_LON * LAT_LON_MULTIPLIER,
+            2000, Location_Class::ALT_FRAME::ALT_FRAME_ABOVE_HOME)
 {
     // init sensor error logging flags
     sensor_health.baro = true;
