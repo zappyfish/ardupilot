@@ -43,7 +43,7 @@ void Copter::userhook_FastLoop()
     int16_t pitch = ahrs.pitch_sensor;
     uint16_t yaw = ahrs.yaw_sensor;
     // Vector3f accel = ins.get_accel();
-    flight_packet *packet = new flight_packet(pos.x, pos.y, pos.z, roll, pitch, yaw); // TODO: change me
+    flight_packet *packet = new flight_packet(pos.x, pos.y, pos.z, -roll, -pitch, yaw); // TODO: change me
     packet_manager::get_instance().send_packet(packet);
 
     // Check packets every 10ms

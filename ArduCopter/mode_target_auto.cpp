@@ -136,7 +136,7 @@ void Copter::ModeTargetAuto::target_packet_callback(const char *packet_type, std
                                             std::vector<const char *> values, void *args) {
     directions_packet packet(keys, values);
     ModeTargetAuto* mode = static_cast<ModeTargetAuto*>(args);
-    mode->set_lean_angles(packet.get_x(), packet.get_y());
+    mode->set_lean_angles(-packet.get_x(), -packet.get_y());
     mode->saw_target = packet.get_saw_target();
     mode->should_land = packet.get_should_land();
 }

@@ -19,16 +19,16 @@ bool Copter::ModeGPSAuto::init(bool ignore_checks) {
     packet_manager::get_instance().send_packet(packet);
 
 
-    copter.initial_destination.set_alt_cm(inertial_nav.get_altitude(), Location_Class::ALT_FRAME::ALT_FRAME_ABOVE_HOME);
-    wp_nav->set_wp_destination(copter.initial_destination);
+//    copter.initial_destination.set_alt_cm(inertial_nav.get_altitude(), Location_Class::ALT_FRAME::ALT_FRAME_ABOVE_HOME);
+//    wp_nav->set_wp_destination(copter.initial_destination);
 
-//    if (!copter.has_destination.load() || !copter.has_switched_into_gps_mode_once.load()) {
-//        wp_nav->set_wp_destination(copter.initial_destination);
-//        copter.has_switched_into_gps_mode_once = true;
-//    } else {
-//        copter.rf_destination.z = inertial_nav.get_altitude();
-//        wp_nav->set_wp_destination(copter.rf_destination, false);
-//    }
+    if (!copter.has_destination.load() || !copter.has_switched_into_gps_mode_once.load()) {
+        wp_nav->set_wp_destination(copter.initial_destination);
+        copter.has_switched_into_gps_mode_once = true;
+    } else {
+        copter.rf_destination.z = inertial_nav.get_altitude();
+        wp_nav->set_wp_destination(copter.rf_destination, false);
+    }
 
     return true;
 }
