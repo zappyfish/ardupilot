@@ -43,7 +43,7 @@ void Copter::userhook_FastLoop()
     int16_t pitch = ahrs.pitch_sensor;
     uint16_t yaw = ahrs.yaw_sensor;
     // Vector3f accel = ins.get_accel();
-    flight_packet *packet = new flight_packet(pos.x, pos.y, pos.z, -roll, -pitch, yaw); // TODO: change me
+    flight_packet *packet = new flight_packet(pos.x, pos.y, pos.z, roll, pitch, yaw); // TODO: change me
     packet_manager::get_instance().send_packet(packet);
 
     // Check packets every 10ms
@@ -148,18 +148,13 @@ void Copter::vadl_arming_callback(const char *packet_type, std::vector<const cha
 
 void Copter::vadl_destination_callback(const char *packet_type, std::vector<const char *> keys,
                                        std::vector<const char *> values, void *args) {
-    Copter* vadl_copter = static_cast<Copter*>(args);
+    Copter *vadl_copter = static_cast<Copter *>(args);
 
     gps_values_packet received_packet(keys, values);
-//    vadl_copter->destination_x = received_packet.get_x();
-//    vadl_copter->destination_y = received_packet.get_y();
-//
-    vadl_copter->has_destination = true;
 
-    Vector3f destination;
-    destination.x = received_packet.get_x();
-    destination.y = received_packet.get_y();
-    destination.z = vadl_copter->inertial_nav.get_altitude();
-
-    vadl_copter->wp_nav->set_wp_destination(destination, false); // TODO: check on the second arg, terrain_alt flag
+    if (received_packet.get_x() != 0 || received_packet.get_y() != 0) {
+        vadl_copter->has_destination = true;
+        vadl_copter->rf_destination.x = received_packet.get_x();
+        vadl_copter->rf_destination.y = received_packet.get_y();
+    }
 }

@@ -18,10 +18,17 @@ bool Copter::ModeGPSAuto::init(bool ignore_checks) {
     mode_packet* packet = new mode_packet(true, false);
     packet_manager::get_instance().send_packet(packet);
 
-    if (!copter.has_destination.load()) {
-        copter.initial_destination.set_alt_cm(inertial_nav.get_altitude(), Location_Class::ALT_FRAME::ALT_FRAME_ABOVE_HOME);
-        wp_nav->set_wp_destination(copter.initial_destination);
-    }
+
+    copter.initial_destination.set_alt_cm(inertial_nav.get_altitude(), Location_Class::ALT_FRAME::ALT_FRAME_ABOVE_HOME);
+    wp_nav->set_wp_destination(copter.initial_destination);
+
+//    if (!copter.has_destination.load() || !copter.has_switched_into_gps_mode_once.load()) {
+//        wp_nav->set_wp_destination(copter.initial_destination);
+//        copter.has_switched_into_gps_mode_once = true;
+//    } else {
+//        copter.rf_destination.z = inertial_nav.get_altitude();
+//        wp_nav->set_wp_destination(copter.rf_destination, false);
+//    }
 
     return true;
 }
@@ -38,7 +45,7 @@ void Copter::ModeGPSAuto::run() {
     // run waypoint controller
     copter.failsafe_terrain_set_status(wp_nav->update_wpnav());
 
-    // call z-axis position controller (wpnav should have already updated it's alt target)
+    // call z-axis position controller (wpnav should have already updated its alt target)
     pos_control->update_z_controller();
 
     attitude_control->input_euler_angle_roll_pitch_euler_rate_yaw(wp_nav->get_roll(), wp_nav->get_pitch(), 0); // 0 for target yaw rate
