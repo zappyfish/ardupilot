@@ -42,6 +42,9 @@ void Copter::ModeGPSAuto::run() {
     // set motors to full range
     motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
+    // Set speed with linear slowdown as target is approached
+    pos_control->set_speed_xy(get_speed_cm());
+
     // run waypoint controller
     copter.failsafe_terrain_set_status(wp_nav->update_wpnav());
 
