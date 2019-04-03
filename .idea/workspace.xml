@@ -10,8 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bdd41f6-e2fb-463a-b12e-8823b7a965fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libraries/Jetson-Processing" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/Jetson-Processing" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/uart/pixhawk_uart.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/Jetson-Processing/communications/pixhawk/uart/pixhawk_uart.cpp" afterDir="false" />
     </list>
@@ -68,7 +66,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="454" />
-          <entry key="cpp" value="24463" />
+          <entry key="cpp" value="24464" />
           <entry key="h" value="5091" />
           <entry key="inc" value="182" />
           <entry key="mk" value="339" />
@@ -81,7 +79,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Doxygen file" value="2" />
-          <entry key="ObjectiveC" value="29552" />
+          <entry key="ObjectiveC" value="29553" />
           <entry key="PLAIN_TEXT" value="1034" />
           <entry key="Python" value="700" />
         </counts>
@@ -93,8 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="695">
+              <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -159,8 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libraries/AC_WPNav/AC_WPNav.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="92" column="14" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="14" />
+            <state relative-caret-position="272">
+              <caret line="133" column="42" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -509,7 +507,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189063000" />
+    <option name="totallyTimeSpent" value="189190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="967" extended-state="0" />
@@ -849,15 +847,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libraries/AC_WPNav/AC_WPNav.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="92" column="14" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="14" />
+        <state relative-caret-position="272">
+          <caret line="133" column="42" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ArduCopter/mode_gps_auto.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="695">
+          <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
         </state>
       </provider>
     </entry>

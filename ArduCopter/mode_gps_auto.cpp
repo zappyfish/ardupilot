@@ -57,7 +57,7 @@ void Copter::ModeGPSAuto::run() {
 
 float Copter::ModeGPSAuto::get_speed_cm() {
 
-    float dist = get_wp_distance_to_destination();
+    float dist = wp_nav->get_wp_distance_to_destination();
 
     float speed = (dist / VADL_TEST_GPS_DISTANCE_CM) * VADL_GPS_MODE_MAX_SPEED;
     if (speed > VADL_GPS_MODE_MAX_SPEED) {
