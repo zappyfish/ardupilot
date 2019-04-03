@@ -42,6 +42,9 @@ void Copter::ModeGPSAuto::run() {
     // set motors to full range
     motors->set_desired_spool_state(AP_Motors::DESIRED_THROTTLE_UNLIMITED);
 
+    // Set speed with linear slowdown as target is approached
+    pos_control->set_speed_xy(get_speed_cm());
+
     // run waypoint controller
     copter.failsafe_terrain_set_status(wp_nav->update_wpnav());
 
@@ -54,9 +57,10 @@ void Copter::ModeGPSAuto::run() {
 
 float Copter::ModeGPSAuto::get_speed_cm() {
     const Vector3f &pos = inertial_nav.get_position(); // 0 is imu instance
+    const Vector3f &dest = wp_nav->get_destination();
 
-    float dist_x = go_to_x - pos.x;
-    float dist_y = go_to_y - pos.y;
+    float dist_x = dest.x - pos.x;
+    float dist_y = dest.y - pos.y;
 
     float dist = safe_sqrt((dist_x * dist_x) + (dist_y * dist_y));
 
