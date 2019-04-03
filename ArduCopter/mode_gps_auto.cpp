@@ -56,13 +56,8 @@ void Copter::ModeGPSAuto::run() {
 
 
 float Copter::ModeGPSAuto::get_speed_cm() {
-    const Vector3f &pos = inertial_nav.get_position(); // 0 is imu instance
-    const Vector3f &dest = wp_nav->get_destination();
 
-    float dist_x = dest.x - pos.x;
-    float dist_y = dest.y - pos.y;
-
-    float dist = safe_sqrt((dist_x * dist_x) + (dist_y * dist_y));
+    float dist = get_wp_distance_to_destination();
 
     float speed = (dist / VADL_TEST_GPS_DISTANCE_CM) * VADL_GPS_MODE_MAX_SPEED;
     if (speed > VADL_GPS_MODE_MAX_SPEED) {
