@@ -191,12 +191,18 @@ public:
     std::atomic<bool> shouldSendArmingPacket;
     std::atomic<bool> shouldSendDisarmingPacket;
     std::atomic<bool> has_destination;
+    std::atomic<bool> has_switched_into_gps_mode_once;
 
-    int destination_x;
-    int destination_y;
+    Vector3f rf_destination;
+
+    Location_Class initial_destination;
 
     packet_manager::packet_callback acknowledge_callback;
     packet_manager::packet_callback destination_set_callback;
+
+    static constexpr float INITIAL_DESTINATION_LAT = 36.140150;
+    static constexpr float INITIAL_DESTINATION_LON = -86.807276;
+    static constexpr long LAT_LON_MULTIPLIER = 10000000;
 
 
 

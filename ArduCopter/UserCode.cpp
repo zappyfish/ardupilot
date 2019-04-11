@@ -6,6 +6,7 @@
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/arming_packet.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/gps_values_packet.h"
 #include "../libraries/Jetson-Processing/communications/pixhawk/packets/mode_packet.h"
+#include "../libraries/Jetson-Processing/communications/pixhawk/packets/beacon_packet.h"
 
 #define VADL_SERVO_CHANNEL 5
 
@@ -42,7 +43,7 @@ void Copter::userhook_FastLoop()
     int16_t pitch = ahrs.pitch_sensor;
     uint16_t yaw = ahrs.yaw_sensor;
     // Vector3f accel = ins.get_accel();
-    flight_packet *packet = new flight_packet(pos.x, pos.y, pos.z, -roll, -pitch, yaw); // TODO: change me
+    flight_packet *packet = new flight_packet(pos.x, pos.y, pos.z, roll, pitch, yaw); // TODO: change me
     packet_manager::get_instance().send_packet(packet);
 
     // Check packets every 10ms
@@ -53,8 +54,8 @@ void Copter::userhook_FastLoop()
     float percent_pwm_beacon = ((float)(hal.rcin->read(VADL_SERVO_CHANNEL) - RC_INPUT_MIN_PULSEWIDTH)) / range;
     if (percent_pwm_beacon >= 0.5) {
         // Send transmit gps coords
-        gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
-        packet_manager::get_instance().send_packet(gps_packet);
+        beacon_packet *beacon = new beacon_packet();
+        packet_manager::get_instance().send_packet(beacon);
     }
 }
 #endif
@@ -110,6 +111,11 @@ void Copter::userhook_SuperSlowLoop()
         packet = new mode_packet(false, false);
     }
     packet_manager::get_instance().send_packet(packet);
+
+    // Send location update
+    const Vector3f &pos = inertial_nav.get_position(); // 0 is imu instance
+    gps_values_packet *gps_packet = new gps_values_packet(pos.x, pos.y);
+    packet_manager::get_instance().send_packet(gps_packet);
 }
 #endif
 
@@ -142,11 +148,13 @@ void Copter::vadl_arming_callback(const char *packet_type, std::vector<const cha
 
 void Copter::vadl_destination_callback(const char *packet_type, std::vector<const char *> keys,
                                        std::vector<const char *> values, void *args) {
-    Copter* vadl_copter = static_cast<Copter*>(args);
+    Copter *vadl_copter = static_cast<Copter *>(args);
 
     gps_values_packet received_packet(keys, values);
-    vadl_copter->destination_x = received_packet.get_x();
-    vadl_copter->destination_y = received_packet.get_y();
 
-    vadl_copter->has_destination = true;
+    if (received_packet.get_x() != 0 || received_packet.get_y() != 0) {
+        vadl_copter->has_destination = true;
+        vadl_copter->rf_destination.x = received_packet.get_x();
+        vadl_copter->rf_destination.y = received_packet.get_y();
+    }
 }

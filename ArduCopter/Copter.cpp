@@ -37,7 +37,10 @@ Copter::Copter(void)
     flightmode(&mode_stabilize),
     shouldSendDisarmingPacket(false),
     shouldSendArmingPacket(false),
-    has_destination(false)
+    has_destination(false),
+    initial_destination(INITIAL_DESTINATION_LAT * LAT_LON_MULTIPLIER, INITIAL_DESTINATION_LON * LAT_LON_MULTIPLIER,
+            2000, Location_Class::ALT_FRAME::ALT_FRAME_ABOVE_HOME),
+            has_switched_into_gps_mode_once(false)
 {
     // init sensor error logging flags
     sensor_health.baro = true;
